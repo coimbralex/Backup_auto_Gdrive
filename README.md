@@ -1,6 +1,6 @@
 # Introdução
 
-Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do google drive utilizando a ferramenta Rclone no sistema Linux
+Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do Gogle Drive utilizando a ferramenta Rclone no sistema Linux
 
 # Requisitos
 
