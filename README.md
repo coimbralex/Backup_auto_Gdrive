@@ -36,7 +36,7 @@ Enter a value. Press Enter to leave empty.
 client_id> 
  
 ```
-####Pressione Enter para client_id> vazio. 
+###Pressione Enter para client_id> vazio. 
  
 ```
 Option client_secret.
