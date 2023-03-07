@@ -140,7 +140,7 @@ Agora vc precisa criar uma pasta onde irão ser montados os arquivos para a sinc
 $ mkdir ~/Backups
 $ chmod 775 ~/Backups
 ```
-## Vincular o Gdrive com a pasta Backups
+Vincular o Gdrive com a pasta Backups
 
 ```
 $ rclone mount Gdrive: ~/Backups
