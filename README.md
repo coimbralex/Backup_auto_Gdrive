@@ -1,17 +1,25 @@
 # Introdução
 
-Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do google drive utilizando a ferramenta Rclone.
+Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do google drive utilizando a ferramenta Rclone no sistema Linux
+
+# Requisitos
+
 Tem como requisito uma conta ja criada no Google Drive e a instalação do Rclone. 
 
+Neste exemplo o backup esta configurado para ser realizado todos os dias as 11:20hrs
 
-## Instalação do Rclone
+##Recomendação
+
+Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de criptografia. 
+
+
+## 1)Instalação do Rclone
 
 ```
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
-
 ```
 
-## Configuração do Rclone
+## 2)Configuração do Rclone
 
 ```
 $ rclone config
@@ -20,12 +28,11 @@ $ rclone config
   n) New remote
   s) Set configuration password
   q) Quit config
-  n/s/q> 
-   
+  n/s/q>    
 ```
- Tecle n (para iniciar uma nova configuração e digite o nome de sua preferencia para o drive)
- Em seguida escolha o numero correspondente ao storage que vc ira utilizar. Em nosso caso vai ser escolhido o número 18 > Google Drive.1
-
+ Tecle n (para iniciar uma nova configuração e digite o nome de sua preferencia para o drive, em nosso caso será criado com o nome de Gdrive)
+ 
+ Em seguida escolha o numero correspondente ao storage que vc irá utilizar. Em nosso caso vai ser escolhido o número 18 > Google Drive.
 ```
 Option client_id.
 Google Application Client Id
@@ -33,10 +40,9 @@ Setting your own is recommended.
 See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
 If you leave this blank, it will use an internal key which is low performance.
 Enter a value. Press Enter to leave empty.
-client_id> 
- 
+client_id>  
 ```
-###Pressione Enter para client_id> vazio. 
+Pressione Enter para client_id> vazio. 
  
 ```
 Option client_secret.
@@ -45,7 +51,7 @@ Leave blank normally.
 Enter a value. Press Enter to leave empty.
 client_secret> 
 ```
-####Pressione Enter para client_secret> vazio. 
+Pressione Enter para client_secret> vazio. 
 
 ```
 Option scope.
@@ -66,9 +72,8 @@ Press Enter to leave empty.
    / Allows read-only access to file metadata but
  5 | does not allow any access to read or download file content.
    \ (drive.metadata.readonly)
-
 ```
-####Insira 1 para permitir acesso total
+Insira 1 para permitir acesso total
  
 ```
 Option service_account_file.
@@ -79,7 +84,7 @@ Leading `~` will be expanded in the file name as will environment variables such
 Enter a value. Press Enter to leave empty.
 service_account_file>
 ```
-####Enter para service_account_file> vazio
+Enter para service_account_file> vazio
 
 ```
 Edit advanced config?
@@ -87,7 +92,7 @@ y) Yes
 n) No (default)
 y/n> 
 ```
-####Insira n para default
+Insira n para default
 ```
 Use web browser to automatically authenticate rclone with remote?
  * Say Y if the machine running rclone has a web browser you can use
@@ -98,9 +103,8 @@ y) Yes (default)
 n) No
 y/n> 
 ```
-####Insira y para autenticar na conta do seu drive pelo navegador
+Insira y para autenticar na conta do seu drive pelo navegador
 A janela do navegador irá abrir para fazer o login e dar permissão.
-
 ```
 5>NOTICE: If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth?state=SZIo4VL_xsGY41ew7FAMEA
 <5>NOTICE: Log in and authorize rclone for access
@@ -111,9 +115,8 @@ Configure this as a Shared Drive (Team Drive)?
 y) Yes
 n) No (default)
 y/n>
-
 ```
-####Insira n para default
+Insira n para default
 
 ```
 Keep this "gdrive3" remote?
@@ -122,7 +125,7 @@ e) Edit this remote
 d) Delete this remote
 y/e/d>
 ```
-####Insira y para configuração default
+Insira y para configuração default
 
 Para listar os drives configurados no momento:
 
@@ -132,33 +135,31 @@ $ rclone listremotes
 ```
 O drive criado deve aparecer.
 
-####Agora vc precisa criar uma pasta onde irão ser montados os arquivos para a sincronização com o drive e dar permissoes.
+Agora vc precisa criar uma pasta onde irão ser montados os arquivos para a sincronização com o drive e dar permissoes.
 ```
 $ mkdir ~/Backups
 $ chmod 775 ~/Backups
-
 ```
-####Vincular o Gdrive com a pasta Backups
+##Vincular o Gdrive com a pasta Backups
 
 ```
 $ rclone mount Gdrive: ~/Backups
-
 ``` 
 
-####Crie o script exe_bkp.sh e cole o script do repositório (aqui sera utilizado o editor nano)
+##3) Crie o script exe_bkp.sh e cole o código do repositório (aqui sera utilizado o editor nano)
 
 ```
 $ nano exe_bkp.sh
-
 ```
-####Configure o crontab para a hora e frequencia que deseja para o backup 
+##4)Configure o crontab para a hora e frequencia que deseja para o backup 
 
 ```
 $ crontab - e
-
 ```
 
-####Inclua a seguinte descrição para a realização do backup todos os dias as 11:20hrs da manhã.
+Inclua a seguinte descrição para a realização do backup todos os dias as 11:20hrs da manhã.
 
 20 11 * * * /home/usuario/./exe_bkp.sh
+
+
 
