@@ -14,18 +14,17 @@ sudo -v ; curl https://rclone.org/install.sh | sudo bash
 ## Configuração do Rclone
 
 ```
- rclone config
+$ rclone config
   
   No remotes found - make a new one
   n) New remote
   s) Set configuration password
   q) Quit config
   n/s/q> 
-  
- 
+   
 ```
  Tecle n (para iniciar uma nova configuração e digite o nome de sua preferencia para o drive)
- Em seguida escolha o numero correspondente ao storage que vc ira utilizar. Em nosso caso vai ser escolhido o número 18 > Doogle Drive.18
+ Em seguida escolha o numero correspondente ao storage que vc ira utilizar. Em nosso caso vai ser escolhido o número 18 > Google Drive.1
 
 ```
 Option client_id.
@@ -37,7 +36,7 @@ Enter a value. Press Enter to leave empty.
 client_id> 
  
 ```
-Pressione Enter
+####Pressione Enter para client_id> vazio. 
  
 ```
 Option client_secret.
@@ -46,6 +45,7 @@ Leave blank normally.
 Enter a value. Press Enter to leave empty.
 client_secret> 
 ```
+####Pressione Enter para client_secret> vazio. 
 
 ```
 Option scope.
@@ -67,9 +67,9 @@ Press Enter to leave empty.
  5 | does not allow any access to read or download file content.
    \ (drive.metadata.readonly)
 
-
 ```
-Insira 1 para permitir acesso total 
+####Insira 1 para permitir acesso total
+ 
 ```
 Option service_account_file.
 Service Account Credentials JSON file path.
@@ -79,7 +79,7 @@ Leading `~` will be expanded in the file name as will environment variables such
 Enter a value. Press Enter to leave empty.
 service_account_file>
 ```
-Enter para deixar vazio
+####Enter para service_account_file> vazio
 
 ```
 Edit advanced config?
@@ -87,7 +87,7 @@ y) Yes
 n) No (default)
 y/n> 
 ```
-Insira n para default
+####Insira n para default
 ```
 Use web browser to automatically authenticate rclone with remote?
  * Say Y if the machine running rclone has a web browser you can use
@@ -98,7 +98,7 @@ y) Yes (default)
 n) No
 y/n> 
 ```
-Insira y para autenticar na conta do seu drive pelo navegador
+####Insira y para autenticar na conta do seu drive pelo navegador
 A janela do navegador irá abrir para fazer o login e dar permissão.
 
 ```
@@ -113,7 +113,7 @@ n) No (default)
 y/n>
 
 ```
-Insira n para default
+####Insira n para default
 
 ```
 Keep this "gdrive3" remote?
@@ -122,22 +122,43 @@ e) Edit this remote
 d) Delete this remote
 y/e/d>
 ```
-Insira y para configuração default
+####Insira y para configuração default
 
-Para confirmar as configurações digite o comando:
+Para listar os drives configurados no momento:
 
 ```
-rclone listremotes
+$ rclone listremotes
 
 ```
 O drive criado deve aparecer.
 
+####Agora vc precisa criar uma pasta onde irão ser montados os arquivos para a sincronização com o drive e dar permissoes.
+```
+$ mkdir ~/Backups
+$ chmod 775 ~/Backups
 
+```
+####Vincular o Gdrive com a pasta Backups
 
+```
+$ rclone mount Gdrive: ~/Backups
 
-## Instalação concluida ! Agora vamos para o script.
+``` 
 
+####Crie o script exe_bkp.sh e cole o script do repositório (aqui sera utilizado o editor nano)
 
+```
+$ nano exe_bkp.sh
 
-## Após a criação do shellscript configure o crontab n
+```
+####Configure o crontab para a hora e frequencia que deseja para o backup 
+
+```
+$ crontab - e
+
+```
+
+####Inclua a seguinte descrição para a realização do backup todos os dias as 11:20hrs da manhã.
+
 20 11 * * * /home/usuario/./exe_bkp.sh
+
