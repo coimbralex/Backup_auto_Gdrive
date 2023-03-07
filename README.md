@@ -14,7 +14,7 @@ Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de
 ### 1)Instalação do Rclone
 
 ```
-sudo -v ; curl https://rclone.org/install.sh | sudo bash
+$ sudo -v ; curl https://rclone.org/install.sh | sudo bash
 ```
 
 ### 2)Configuração do Rclone
