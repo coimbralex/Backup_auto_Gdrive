@@ -8,7 +8,7 @@ Tem como requisito uma conta ja criada no Google Drive e a instalação do Rclon
 
 Neste exemplo o backup esta configurado para ser realizado todos os dias as 11:20hrs
 
-##Recomendação
+## Recomendação
 
 Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de criptografia. 
 
@@ -140,18 +140,18 @@ Agora vc precisa criar uma pasta onde irão ser montados os arquivos para a sinc
 $ mkdir ~/Backups
 $ chmod 775 ~/Backups
 ```
-##Vincular o Gdrive com a pasta Backups
+## Vincular o Gdrive com a pasta Backups
 
 ```
 $ rclone mount Gdrive: ~/Backups
 ``` 
 
-##3) Crie o script exe_bkp.sh e cole o código do repositório (aqui sera utilizado o editor nano)
+## 3) Crie o script exe_bkp.sh e cole o código do repositório (aqui sera utilizado o editor nano)
 
 ```
 $ nano exe_bkp.sh
 ```
-##4)Configure o crontab para a hora e frequencia que deseja para o backup 
+## 4)Configure o crontab para a hora e frequencia que deseja para o backup 
 
 ```
 $ crontab - e
