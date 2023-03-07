@@ -2,7 +2,7 @@
 
 Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do Gogle Drive utilizando a ferramenta Rclone no sistema Linux
 
-# Requisitos
+### Requisitos
 
 È necessário uma conta criada no Google Drive e a instalação do Rclone que será feita neste tutorial. 
 
