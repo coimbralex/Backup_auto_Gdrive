@@ -4,9 +4,7 @@ Script de backup automatizado que tem como objetivo armazenar backups em uma pas
 
 # Requisitos
 
-Tem como requisito uma conta ja criada no Google Drive e a instalação do Rclone. 
-
-Neste exemplo o backup esta configurado para ser realizado todos os dias as 11:20hrs
+È necessário uma conta criada no Google Drive e a instalação do Rclone que será feita neste tutorial. 
 
 ## Recomendação
 
