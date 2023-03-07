@@ -6,18 +6,18 @@ Script de backup automatizado que tem como objetivo armazenar backups em uma pas
 
 È necessário uma conta criada no Google Drive e a instalação do Rclone que será feita neste tutorial. 
 
-## Recomendação
+## Recomendação Importante!
 
 Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de criptografia. 
 
 
-## 1)Instalação do Rclone
+### 1)Instalação do Rclone
 
 ```
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
 ```
 
-## 2)Configuração do Rclone
+### 2)Configuração do Rclone
 
 ```
 $ rclone config
@@ -144,12 +144,12 @@ Vincular o Gdrive com a pasta Backups
 $ rclone mount Gdrive: ~/Backups
 ``` 
 
-## 3) Crie o script exe_bkp.sh e cole o código do repositório (aqui sera utilizado o editor nano)
+### 3) Crie o script exe_bkp.sh e cole o código do repositório (aqui sera utilizado o editor nano)
 
 ```
 $ nano exe_bkp.sh
 ```
-## 4)Configure o crontab para a hora e frequencia que deseja para o backup 
+### 4)Configure o crontab para a hora e frequencia que deseja para o backup 
 
 ```
 $ crontab - e
