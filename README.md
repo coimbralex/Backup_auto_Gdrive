@@ -1,6 +1,7 @@
 # Introdução
 
-Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do Gogle Drive utilizando a ferramenta Rclone no sistema Linux
+Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do Gogle Drive utilizando a ferramenta Rclone no sistema Linux.
+O script faz um controle de versão mantendo no drive apenas as ultimas 5 gravações e apagando a mais antiga. O que pode ser alterado para a opção desejada. 
 
 ### Requisitos
 
