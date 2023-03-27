@@ -124,7 +124,7 @@ e) Edit this remote
 d) Delete this remote
 y/e/d>
 ```
-Insira y para configuração default
+Insira y para configuração default e em seguida em q para sair do programa.
 
 Para listar os drives configurados no momento:
 
@@ -150,6 +150,8 @@ $ rclone mount Gdrive: ~/Backups
 ```
 $ nano exe_bkp.sh
 ```
+Atualize com os endereços e diretórios correspondentes.
+
 ### 4)Configure o crontab para a hora e frequencia que deseja para o backup 
 
 ```
