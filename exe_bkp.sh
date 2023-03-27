@@ -3,10 +3,10 @@
 ###VARIAVEIS###
 
 #Diretorio de origem de onde será feito o backup.
-backup_origem="/home/alequi/Documentos"
+backup_origem="/home/usuario/Documentos"
 
 #Diretorio de destino para onde sera enviado o backup.
-backup_destino="/home/alequi/Backups"
+backup_destino="/home/usuario/Backups"
 
 #Formato do arquivo de data.
 formato_data=$(date "+%d-%m-%Y")
@@ -30,4 +30,5 @@ tar -czSpf "$backup_destino/$nome_arquivo_bkp" "$backup_origem"
 ###MANTER APENAS BACKUPS DOS ULTIMOS 5 DIAS###
 find "$backup_destino" -mtime +5 -delete &
 	sleep 15
+###DESMONTA DIRETORIO APOS 15 SEGUNDOS	
 fusermount -u ~/Backups	
