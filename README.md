@@ -9,7 +9,7 @@ O script faz um controle de versão mantendo no drive apenas as ultimas 5 grava�
 
 ## Recomendação Importante!
 
-Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de criptografia. 
+Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de criptografia. Recomendo o uso do Criptomator. 
 
 
 ### 1)Instalação do Rclone
