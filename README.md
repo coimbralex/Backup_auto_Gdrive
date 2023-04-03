@@ -1,15 +1,14 @@
 # Introdução
 
-Script de backup automatizado que tem como objetivo armazenar backups em uma pasta do Gogle Drive utilizando a ferramenta Rclone no sistema Linux.
-O script faz um controle de versão mantendo no drive apenas as ultimas 5 gravações e apagando a mais antiga. O que pode ser alterado para a opção desejada. 
+Este repositório é o resultado da solução encontrada para automação e armazenamento de backup auxiliar em nuvem de alguns documentos que utilizo em meu computador pessoal. Trata-se de um código em Shellscript que realiza uma cópia de determinado diretório, faz a compactação e salva em uma pasta para ser sincronizado em uma conta do Google drive utilizando a ferramenta Rclone.O script faz um controle de versão mantendo no drive apenas as ultimas 5 gravações e apagando a mais antiga. O que pode ser alterado para a opção desejada. O serviço pode ser configurado para outros serviços em nuvem como onedrive, dropbox ou mega entre outros.  
 
 ### Requisitos
 
-È necessário uma conta criada no Google Drive e a instalação do Rclone que será feita neste tutorial. 
+È necessário uma conta criada no Google Drive (ou uma conta de sua preferencia que esteja listada no Rclone) e a instalação do Rclone que será feita neste tutorial. 
 
 ## Recomendação Importante!
 
-Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de criptografia. Recomendo o uso do Criptomator. 
+Não utilize o Google Drive para armazenar arquivos sensíveis sem algum tipo de criptografia. Recomendo o uso do Criptomator para manter os dados seguros. 
 
 
 ### 1)Instalação do Rclone
